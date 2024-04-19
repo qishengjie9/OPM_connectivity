@@ -1,0 +1,43 @@
+library(base)
+library(car)
+library(lme4)
+library(lmerTest)
+library(modelsummary)
+library(multcomp)
+library(MuMIn)
+library(sjplot)
+setwd("F:\\FC-code\\DMN_samelead_nonoise")
+correlation <-read.csv("correlation.csv")
+closeness <-read.csv("closeness.csv")
+fit1<-lmer(closeness~opm_space*connectivity_method*inverse_method+(1+opm_space|subject),data=closeness)
+fit2<-lmer(closeness~opm_space*connectivity_method*inverse_method+(1+connectivity_method|subject),data=closeness)
+fit3<-lmer(closeness~opm_space*connectivity_method*inverse_method+(1+inverse_method|subject),data=closeness)
+fit4<-lmer(closeness~opm_space*connectivity_method*inverse_method+(1|subject),data=closeness)
+fit5<-lmer(closeness~opm_space+connectivity_method+inverse_method+(1|subject),data=closeness)
+modelsummary::modelsummary(
+list(
+"fm1"= fit1,
+"fm2"= fit2,
+"fm3"= fit3,
+"fm4"= fit4,
+"fm5"= fit5
+),
+# stars = TRUE,
+estimate= "{estimate} [{conf.low}, {conf.high}] {stars}",
+statistic =NULL,
+output = "multi-closeness_model.docx"
+)
+Anova(fit,type="II",test.statistic="F")
+r.squaredGLMM(fit)
+fit4.sj <- sjPlot::plot_model(fit4, type = "diag")
+(fit4.assumptions <- cowplot::plot_grid(fit4.sj[[1]],fit4.sj[[2]]$subject, fit4.sj[[3]], fit4.sj[[4]],
+labels = c("A", "B","C","D")))
+cowplot::save_plot(
+"fit4.assumptions.png",
+fit4.assumptions)
+opm_space.mulcomp <- glht(fit, mcp(opm_space="Tukey"))
+summary(opm_space.mulcomp)
+connectivity_method.mulcomp <- glht(fit, mcp(connectivity_method="Tukey"))
+summary(connectivity_method.mulcomp)
+inverse_method.mulcomp <- glht(fit, mcp(inverse_method="Tukey"))
+summary(inverse_method.mulcomp)
