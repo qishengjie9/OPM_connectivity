@@ -1,5 +1,4 @@
-# The impact of channel density, inverse solutions, connectivity metrics and
-calibration errors on OPM-MEG connectivity analysis
+# The impact of channel density, inverse solutions, connectivity metrics and calibration errors on OPM-MEG connectivity analysis
 Optically pumped magnetometers (OPMs) magnetoencephalography (MEG) systems have been rapidly developing in
 the fields of brain function, health and disease. Functional connectivity analysis related to resting-state is an important
 research area in the last two decades. There have been studies attempting to use OPM-based MEG (OPM-MEG)
