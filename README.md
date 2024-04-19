@@ -54,6 +54,7 @@ Wherein alpha process has a spectral peak with its maximum at the traditional al
 - To obtain the connectivity matrices of all subjects and epochs (under calibration error condition), run "run_all_epochs_error()" and "run_all_epochs_angularerror()".
 - To get the results quantification (Pearson correlation, closeness accuracy, edge contribution) run "get_results_quantif()".
 - To get the graph of results run "Plot_result()".
+- To get the statistical analysis, please refer to "results statistical analysis.txt"
 
 * Please check that the path to data is correct prior to running the codes
 ## Acknowledgments
