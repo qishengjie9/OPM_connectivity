@@ -1,5 +1,5 @@
 % plot the violin or bar drawing of the results
-net = 'DMN10_samelead_nonoise';
+net = 'DMN10_nonoise';
 
 conn = {'plv','wpli','wpli_debiased','psi','aec','aec_orth'};
 inv = {'lcmv','ungmv','mne','wmne','sloreta', 'eloreta'};
