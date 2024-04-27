@@ -2,7 +2,7 @@
 net = 'DMN10_samelead_nonoise';
 
 conn = {'plv','wpli','wpli_debiased','psi','aec','aec_orth'};
-inv = {'lcmv','wlcmv','mne','wmne','sloreta', 'eloreta'};
+inv = {'lcmv','ungmv','mne','wmne','sloreta', 'eloreta'};
 %opm_space = {'256','128','64','32','19'};
 opm_space        = {'15mm','20mm','25mm','30mm','35mm','40mm'};
 correlationmat = zeros(6,6,6,200);
