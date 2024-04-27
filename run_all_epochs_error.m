@@ -82,8 +82,8 @@ for  s = 1:40
             
             %%
             opm_space = {'15mm','20mm','25mm','30mm','35mm','40mm'};
-            %inv = {'mne','wmne','eloreta','lcmv','wlcmv'};
-            inv = {'lcmv','wlcmv','mne','wmne','sloreta', 'eloreta'};
+            %inv = {'mne','wmne','eloreta','lcmv','ungmv'};
+            inv = {'lcmv','ungmv','mne','wmne','sloreta', 'eloreta'};
             for m = 1:length(opm_space)
                 if strcmp(conn{c},'aec_orth') && ismember(opm_space{m},{'25mm','30mm','35mm','40mm'})
                     continue
