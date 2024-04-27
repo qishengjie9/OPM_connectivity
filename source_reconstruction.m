@@ -1,5 +1,5 @@
 function source = source_reconstruction(meg,srate,inv_meth,opm_space,noiseCov)
-% compute MEG inverse solution using 'lcmv','wlcmv','mne','wmne','sloreta', or 'eloreta'
+% compute MEG inverse solution using 'lcmv','ungmv','mne','wmne','sloreta', or 'eloreta'
 % inputs: meg: nb_channels*nb_samples
 % srate: sampling rate
 % OPM_array: OPM_array based on which MEG data was computed. opm_space = 
@@ -43,7 +43,7 @@ timelock                 = ft_timelockanalysis(cfg,ftData);
 
 % General options
 cfg = struct ; 
-cfg.method = inv_meth ; % 'lcmv','wlcmv','mne','wmne','sloreta', or 'eloreta'
+cfg.method = inv_meth ; % 'lcmv','ungmv','mne','wmne','sloreta', or 'eloreta'
 cfg.sourcemodel = ftLeadfield ; % from output of ft_prepare_sourcemodel
 cfg.sourcemodel.mom = transpose(sources.Orient);
 cfg.headmodel = ftHeadmodel ; % from output of ft_prepare_headmodel
@@ -82,7 +82,7 @@ switch inv_meth
     filters(:,:)            = cell2mat(src.avg.filter);
     source = filters * meg;
         
-    case 'wlcmv'
+    case 'ungmv'
         cfg.method = 'lcmv' ; % first construct the LCMV solution
         cfg.lambda = 0.05 ; % set regularization parameter
         [~,source] = evalc('ft_sourceanalysis(cfg,timelock)') ; % do Fieldtrip source analysis
