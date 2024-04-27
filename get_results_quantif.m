@@ -2,7 +2,7 @@
 clear all
 
 opm_space        = {'15mm','20mm','25mm','30mm','35mm','40mm'};
-inv = {'lcmv','wlcmv','mne','wmne','sloreta', 'eloreta'};
+inv = {'lcmv','ungmv','mne','wmne','sloreta', 'eloreta'};
 conn = {'plv','wpli','wpli_debiased','psi','aec','aec_orth'};
 
 nb_subj     =   40;
