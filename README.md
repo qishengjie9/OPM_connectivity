@@ -58,7 +58,7 @@ Wherein alpha process has a spectral peak with its maximum at the traditional al
 
 * Please check that the path to data is correct prior to running the codes
 ## Acknowledgments
-The authors would like to thank Ms. Allouch at University of Rennes for their code support.
+The authors would like to thank Sahar Allouch at University of Rennes, Tim Tierney at UCL Institute of Neurology and Deirel Paz-Linares at University of Electronic Science and Technology of China for their code sharing in their previous publications.
 
 ## References
 [1] D. Paz-Linares, E. Gonzalez-Moreira, A. Areces-Gonzalez, Y. Wang, M. Li, E. Martinez-Montes, J. Bosch-Bayard, M. L.Bringas-Vega, M. Valdes-Sosa, P. A. Valdes-Sosa, Identifying oscillatory brain networks with hidden gaussian graphical spectral models of meeg, Scientific Reports 13 (1) (2023) 11466.
