@@ -1,4 +1,4 @@
-function meg = compute_meg2(simulated_sources, opm_space)
+function meg = compute_meg(simulated_sources, opm_space)
 
 % MEG direct problem
 % Compute scalp MEG from cortical sources
@@ -8,9 +8,6 @@ function meg = compute_meg2(simulated_sources, opm_space)
 % generated {'SPMgainmatrix_sim_opm_15mm','SPMgainmatrix_sim_opm_20mm','SPMgainmatrix_sim_opm_25mm',
 %'SPMgainmatrix_sim_opm_30mm',SPMgainmatrix_sim_opm_35mm,'SPMgainmatrix_sim_opm_40mm',}
 
-
-% This code was originally developped by Sahar Allouch.
-% contact: saharallouch@gmail.com
 
 %%
 % load leadfield struct
