@@ -44,16 +44,12 @@ Wherein alpha process has a spectral peak with its maximum at the traditional al
       - phase slope index (PSI)
       - amplitude envelope correlation (AEC) without source leakage correction
       - amplitude envelope correlation (AEC) with source leakage correction
-  4) Calibration errors:
-      - gain error (4%)
-      - crosstalk (2%)
-      - angular error(2°)
+  
 
 ## Running the code:
 - To obtain the connectivity matrices of all subjects and epochs (under reference case, case 1 and case 2), run "run_all_epochs()".
 - To obtain the connectivity matrices of all subjects and epochs (under calibration error condition), run "run_all_epochs_error()" and "run_all_epochs_angularerror()".
 - To get the results quantification (Pearson correlation, closeness accuracy, edge contribution) run "get_results_quantif()".
-- To get the graph of results run "Plot_result()".
 - To get the statistical analysis, please refer to "results statistical analysis.txt"
 
 * Please check that the path to data is correct prior to running the codes
